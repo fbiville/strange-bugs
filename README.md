@@ -1,6 +1,6 @@
 # Strange bugs
 
-## ClassCastException with `mockito-kotlin` and `Result.flatMap` extension
+## ClassCastException with `mockito-kotlin` and `Result.flatMap` custom extension
 
 Run:
 
@@ -16,7 +16,7 @@ Run:
  $ mvn test -Dtest=SomeServiceMapTest
 ```
 
-## `Result.failure(xxx)` results in `isSuccess == true` with `jqwik`
+## `Result.failure(xxx)` results in `isSuccess == true` with `jqwik` and `Result.forEach` custom extension
 
 ```console
  $ mvn test -Dtest='ForEach*'
