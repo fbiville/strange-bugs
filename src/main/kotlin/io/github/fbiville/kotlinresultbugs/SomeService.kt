@@ -8,11 +8,16 @@ class SomeService(private val someClient: SomeClient) {
         }
     }
 
+    fun lengths(): Result<List<Int>> {
+        return someClient.getItems().map(::getLengths)
+    }
+
 
     private fun addLengths(items: List<String>): Result<Int> {
-        return Result.success(
-                items.map { it.length }.reduce { a, b -> a + b })
+        return Result.success(getLengths(items).reduce { a, b -> a + b })
     }
+
+    private fun getLengths(items: List<String>) = items.map { it.length }
 }
 
 open class SomeClient {

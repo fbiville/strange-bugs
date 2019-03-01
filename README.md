@@ -5,7 +5,15 @@
 Run:
 
 ```console
- $ mvn test -Dtest=SomeServiceTest
+ $ mvn test -Dtest=SomeServiceFlatMapTest
+```
+
+## ClassCastException with `mockito-kotlin` and built-in `Result.map`
+
+Run:
+
+```console
+ $ mvn test -Dtest=SomeServiceMapTest
 ```
 
 ## `Result.failure(xxx)` results in `isSuccess == true` with `jqwik`

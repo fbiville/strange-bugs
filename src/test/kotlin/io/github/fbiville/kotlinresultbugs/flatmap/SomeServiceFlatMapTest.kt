@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 
-class SomeServiceTest {
+class SomeServiceFlatMapTest {
     private val client = mock<SomeClient>()
     private lateinit var service: SomeService
 
@@ -20,14 +20,14 @@ class SomeServiceTest {
     }
 
     @Test
-    fun `ClassCastException bug - computes lengths`() {
+    fun `ClassCastException bug - computes total length`() {
         val lengths = service.sumLengths()
 
         assertEquals(2, lengths.getOrNull())
     }
 
     @Test
-    fun `no bug - computes lengths`() {
+    fun `no bug - computes total length`() {
         assertEquals(11, SomeService(SomeClient()).sumLengths().getOrNull())
     }
 }
